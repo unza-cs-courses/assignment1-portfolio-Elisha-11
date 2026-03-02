@@ -17,372 +17,774 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
 
 /* ============================================================
    CSS CUSTOM PROPERTIES (VARIABLES)
-   TODO: Define your color scheme and spacing variables
+   Modern, professional color palette for a tech portfolio
    ============================================================ */
 :root {
-    /* Colors - TODO: Customize your color palette */
-    --color-primary: /* Your primary color */;
-    --color-primary-dark: /* Darker shade */;
-    --color-secondary: /* Secondary color */;
-    --color-text: /* Main text color */;
-    --color-text-light: /* Lighter text */;
-    --color-background: /* Page background */;
-    --color-background-alt: /* Alternate background */;
-    --color-border: /* Border color */;
+    /* Colors - Modern indigo/teal theme */
+    --color-primary: #6366f1;           /* Indigo 500 */
+    --color-primary-dark: #4f46e5;      /* Indigo 600 */
+    --color-primary-light: #818cf8;     /* Indigo 400 */
+    --color-secondary: #10b981;         /* Emerald 500 */
+    --color-secondary-dark: #059669;    /* Emerald 600 */
+    --color-text: #1e293b;              /* Slate 800 */
+    --color-text-light: #64748b;        /* Slate 500 */
+    --color-text-inverse: #f8fafc;      /* Slate 50 */
+    --color-background: #f8fafc;        /* Slate 50 */
+    --color-background-alt: #ffffff;    /* White */
+    --color-background-dark: #0f172a;   /* Slate 900 */
+    --color-border: #e2e8f0;            /* Slate 200 */
+    --color-border-focus: #6366f1;      /* Indigo 500 */
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-shadow-hover: rgba(0, 0, 0, 0.15);
 
-    /* Typography - TODO: Define your font sizes */
-    --font-family: /* Your font stack */;
-    --font-size-base: /* Base size, e.g., 16px */;
-    --font-size-sm: /* Small text */;
-    --font-size-lg: /* Large text */;
-    --font-size-xl: /* Extra large */;
-    --font-size-2xl: /* Headings */;
-    --font-size-3xl: /* Large headings */;
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                   Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-size-base: 1rem;             /* 16px */
+    --font-size-sm: 0.875rem;           /* 14px */
+    --font-size-lg: 1.125rem;           /* 18px */
+    --font-size-xl: 1.25rem;            /* 20px */
+    --font-size-2xl: 1.5rem;            /* 24px */
+    --font-size-3xl: 2rem;              /* 32px */
+    --font-size-4xl: 2.5rem;            /* 40px */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --line-height-normal: 1.6;
+    --line-height-tight: 1.4;
 
-    /* Spacing - TODO: Define spacing scale */
-    --spacing-xs: /* Extra small */;
-    --spacing-sm: /* Small */;
-    --spacing-md: /* Medium */;
-    --spacing-lg: /* Large */;
-    --spacing-xl: /* Extra large */;
+    /* Spacing Scale (8px base) */
+    --spacing-xs: 0.25rem;  /* 4px */
+    --spacing-sm: 0.5rem;   /* 8px */
+    --spacing-md: 1rem;     /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
+    --spacing-2xl: 3rem;    /* 48px */
+    --spacing-3xl: 4rem;    /* 64px */
 
     /* Layout */
-    --max-width: /* Container max-width */;
-    --border-radius: /* Default border radius */;
+    --max-width: 1200px;
+    --border-radius: 0.75rem;     /* 12px */
+    --border-radius-sm: 0.5rem;   /* 8px */
+    --border-radius-lg: 1rem;     /* 16px */
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 var(--color-shadow);
+    --shadow-md: 0 4px 6px -1px var(--color-shadow), 0 2px 4px -1px var(--color-shadow);
+    --shadow-lg: 0 10px 15px -3px var(--color-shadow), 0 4px 6px -2px var(--color-shadow);
+    --shadow-hover: 0 20px 25px -5px var(--color-shadow-hover), 0 10px 10px -5px var(--color-shadow-hover);
 
     /* Transitions */
-    --transition-fast: /* Fast transition */;
-    --transition-normal: /* Normal transition */;
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
 }
 
 /* ============================================================
    CSS RESET / BASE STYLES
-   TODO: Add your CSS reset
    ============================================================ */
 *,
 *::before,
 *::after {
-    /* TODO: box-sizing, margin, padding reset */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    /* TODO: scroll-behavior, font-size */
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
 }
 
 body {
-    /* TODO: font-family, color, background-color, line-height */
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: var(--line-height-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 img {
-    /* TODO: Make images responsive */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius-sm);
 }
 
 a {
-    /* TODO: Link styles */
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
 }
 
 a:hover {
-    /* TODO: Link hover state */
+    color: var(--color-primary-dark);
 }
 
 ul {
-    /* TODO: List reset */
+    list-style: none;
+}
+
+/* Remove default focus outline, add custom */
+:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
 }
 
 /* ============================================================
    UTILITY CLASSES
-   TODO: Create reusable utility classes
    ============================================================ */
 .container {
-    /* TODO: Container styles
-     * - width: 100%
-     * - max-width
-     * - margin: 0 auto
-     * - padding
-     */
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-padding {
+    padding: var(--spacing-2xl) 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.divider {
+    margin: 0 var(--spacing-sm);
+    opacity: 0.6;
+    font-weight: var(--font-weight-normal);
+}
+
+.required {
+    color: var(--color-secondary-dark);
+    font-weight: var(--font-weight-bold);
 }
 
 /* ============================================================
    BUTTONS
-   TODO: Style your buttons
    ============================================================ */
 .btn {
-    /* TODO: Base button styles
-     * - display, padding
-     * - border, border-radius
-     * - font-size, font-weight
-     * - text-align, cursor
-     * - transition
-     */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
 }
 
 .btn--primary {
-    /* TODO: Primary button (filled) */
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border-color: var(--color-primary);
 }
 
 .btn--primary:hover {
-    /* TODO: Primary button hover */
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .btn--outline {
-    /* TODO: Outline button (bordered) */
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .btn--outline:hover {
-    /* TODO: Outline button hover */
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    transform: translateY(-2px);
 }
 
 .btn--small {
-    /* TODO: Small button variant */
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* ============================================================
-   HEADER & NAVIGATION
-   TODO: Style navigation using Flexbox
-   Requirements:
-   - Fixed or sticky header
-   - Logo on left, nav links on right
-   - Mobile-friendly (links stack or hamburger menu)
+   HEADER & NAVIGATION (Flexbox)
    ============================================================ */
 .header {
-    /* TODO: Style the header
-       Consider: position, background, padding, box-shadow, z-index */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-sm) 0;
 }
 
 .nav {
-    /* TODO: Use Flexbox for navigation layout
-     * - display: flex
-     * - justify-content: space-between
-     * - align-items: center
-     */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
 .nav__logo a {
-    /* TODO: Logo styles */
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    letter-spacing: -0.025em;
+}
+
+.nav__logo a:hover {
+    color: var(--color-primary);
 }
 
 .nav__menu {
-    /* TODO: Style navigation menu
-       Mobile: Stack vertically or hide
-       Desktop: Horizontal with Flexbox */
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
 }
 
 .nav__menu a {
-    /* TODO: Navigation link styles */
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
 }
 
-.nav__menu a:hover {
-    /* TODO: Navigation link hover */
+.nav__menu a:hover,
+.nav__menu a:focus {
+    color: var(--color-primary);
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Mobile menu toggle (hidden by default, shown via JS if needed) */
+.nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    cursor: pointer;
+    padding: var(--spacing-xs);
 }
 
 /* ============================================================
-   HERO SECTION
-   TODO: Style hero section
+   HERO SECTION (Flexbox centering)
    ============================================================ */
 .hero {
-    /* TODO: Style hero section
-       Consider: min-height, background, centering content
-       Use Flexbox for centering */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-md);
+    background: linear-gradient(135deg, 
+                rgba(99, 102, 241, 0.05) 0%, 
+                rgba(16, 185, 129, 0.05) 100%);
+    text-align: center;
+}
+
+.hero__content {
+    max-width: 700px;
 }
 
 .hero__content h1 {
-    /* TODO: Style your name */
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.025em;
 }
 
 .hero__tagline {
-    /* TODO: Style tagline */
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+    line-height: var(--line-height-normal);
+}
+
+.hero__tagline .divider {
+    color: var(--color-primary);
 }
 
 /* ============================================================
-   ABOUT SECTION
-   TODO: Style about section using CSS Grid or Flexbox
+   ABOUT SECTION (Flexbox layout)
    ============================================================ */
 .about {
-    /* TODO: Section padding */
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-background-alt);
 }
 
 .about h2 {
-    /* TODO: Section heading */
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-text);
 }
 
 .about__content {
-    /* TODO: Use CSS Grid or Flexbox for layout
-       Mobile: Stack image above text
-       Desktop: Side by side */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    align-items: center;
 }
 
 .about__image img {
-    /* TODO: Style profile image */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-primary);
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-normal);
+}
+
+.about__image img:hover {
+    transform: scale(1.05);
+}
+
+.about__text {
+    text-align: center;
+    max-width: 700px;
 }
 
 .about__text p {
-    /* TODO: Paragraph styles */
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
 }
 
 .about__text h3 {
-    /* TODO: Subheading styles */
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: var(--spacing-xl) 0 var(--spacing-md);
 }
 
 .skills-list {
-    /* TODO: Style skills list
-       Consider: Flexbox, tags/badges style */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
 }
 
 .skills-list li {
-    /* TODO: Individual skill badge */
+    background-color: rgba(99, 102, 241, 0.1);
+    color: var(--color-primary-dark);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-fast);
+}
+
+.skills-list li:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    transform: translateY(-2px);
 }
 
 /* ============================================================
-   PROJECTS SECTION
-   TODO: Style projects using CSS Grid
+   PROJECTS SECTION (CSS Grid)
    ============================================================ */
 .projects {
-    /* TODO: Section styling */
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-background);
 }
 
 .projects h2 {
-    /* TODO: Section heading */
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-text);
 }
 
 .projects__grid {
-    /* TODO: Use CSS Grid for project cards
-       Mobile: 1 column
-       Tablet: 2 columns
-       Desktop: 3 columns */
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    gap: var(--spacing-lg);
 }
 
 .project-card {
-    /* TODO: Style project cards
-     * - background, border-radius, overflow
-     * - box-shadow, transition
-     */
+    background-color: var(--color-background-alt);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
-    /* TODO: Card hover effect */
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
 }
 
 .project-card img {
-    /* TODO: Project image */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    transition: transform var(--transition-normal);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
 .project-card__content {
-    /* TODO: Card content area */
+    padding: var(--spacing-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 
 .project-card__content h3 {
-    /* TODO: Project title */
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
 }
 
 .project-card__content p {
-    /* TODO: Project description */
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: var(--line-height-normal);
+    flex: 1;
 }
 
 .project-card__links {
-    /* TODO: Links container (Flexbox) */
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: auto;
 }
 
 /* ============================================================
    CONTACT SECTION
-   TODO: Style contact form
    ============================================================ */
 .contact {
-    /* TODO: Section styling */
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-background-alt);
 }
 
 .contact h2 {
-    /* TODO: Section heading */
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--color-text);
 }
 
 .contact__form {
-    /* TODO: Style contact form
-       Consider: max-width, centering */
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
 }
 
 .form-group {
-    /* TODO: Form group spacing */
+    margin-bottom: var(--spacing-lg);
 }
 
 .form-group label {
-    /* TODO: Label styles */
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
 }
 
 .form-group input,
 .form-group textarea {
-    /* TODO: Style form inputs
-     * - width: 100%
-     * - padding, border, border-radius
-     * - font-family, font-size
-     * - transition
-     */
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background-color: var(--color-background-alt);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-text-light);
+    opacity: 0.7;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    /* TODO: Focus state */
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
 .form-group textarea {
-    /* TODO: Textarea specific styles */
+    min-height: 120px;
+    resize: vertical;
 }
 
 /* ============================================================
    FOOTER
-   TODO: Style footer
    ============================================================ */
 .footer {
-    /* TODO: Footer styling
-     * - background, color, padding
-     * - text-align
-     */
+    background-color: var(--color-background-dark);
+    color: var(--color-text-inverse);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
 }
 
 .footer .container {
-    /* TODO: Footer layout (Flexbox) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.footer p {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
 }
 
 .footer__social {
-    /* TODO: Social links container */
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer__social a {
-    /* TODO: Social link styles */
+    color: var(--color-text-inverse);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
 }
 
 .footer__social a:hover {
-    /* TODO: Social link hover */
+    color: var(--color-primary-light);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ============================================================
-   RESPONSIVE BREAKPOINTS
-   TODO: Implement mobile-first responsive design
-
-   Start with mobile styles above, then add complexity
-   for larger screens below.
+   RESPONSIVE BREAKPOINTS (Mobile-First)
    ============================================================ */
 
 /* Tablet (768px and up) */
 @media (min-width: 768px) {
-    /* TODO: Add tablet styles
-       - Adjust typography sizes
-       - Change layouts (Grid columns, Flexbox directions)
-       - Adjust spacing */
+    /* Typography */
+    .hero__content h1 {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .hero__tagline {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* About Section - Side by side layout */
+    .about__content {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .about__image img {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .about__text {
+        text-align: left;
+    }
+    
+    .skills-list {
+        justify-content: flex-start;
+    }
+    
+    /* Projects Grid - 2 columns */
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Navigation */
+    .nav__menu {
+        gap: var(--spacing-xl);
+    }
+    
+    .nav__menu a {
+        font-size: var(--font-size-base);
+    }
 }
 
 /* Desktop (1024px and up) */
 @media (min-width: 1024px) {
-    /* TODO: Add desktop styles
-       - Further layout adjustments
-       - Larger typography
-       - More spacing */
+    /* Layout */
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .section-padding {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 90vh;
+        padding: var(--spacing-3xl) var(--spacing-lg);
+    }
+    
+    .hero__content h1 {
+        font-size: 3rem; /* ~48px */
+    }
+    
+    /* Projects Grid - 3 columns */
+    .projects__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Footer */
+    .footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    .footer__social {
+        justify-content: flex-end;
+    }
 }
 
-/* Large Desktop (1200px and up) */
+/* Large Desktop (1200px and up) - Optional enhancements */
 @media (min-width: 1200px) {
-    /* TODO: Add large desktop styles (optional) */
+    .hero__content h1 {
+        font-size: 3.5rem; /* ~56px */
+    }
+    
+    .about__image img {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .project-card img {
+        height: 220px;
+    }
 }
 
 /* ============================================================
-   ADDITIONAL STYLES
-   TODO: Add any additional styles you need
+   ADDITIONAL STYLES & ACCESSIBILITY
    ============================================================ */
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    padding: var(--spacing-sm) var(--spacing-md);
+    z-index: 1000;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .project-card__links {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .project-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+/* Dark mode support (Bonus: +3%) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #f1f5f9;
+        --color-text-light: #94a3b8;
+        --color-text-inverse: #0f172a;
+        --color-background: #0f172a;
+        --color-background-alt: #1e293b;
+        --color-border: #334155;
+        --color-shadow: rgba(0, 0, 0, 0.3);
+    }
+    
+    .header {
+        background-color: rgba(15, 23, 42, 0.95);
+    }
+    
+    .hero {
+        background: linear-gradient(135deg, 
+                    rgba(99, 102, 241, 0.15) 0%, 
+                    rgba(16, 185, 129, 0.15) 100%);
+    }
+    
+    .about,
+    .contact {
+        background-color: var(--color-background-alt);
+    }
+    
+    .project-card,
+    .contact__form {
+        background-color: var(--color-background-alt);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        background-color: var(--color-background);
+        border-color: var(--color-border);
+    }
+}

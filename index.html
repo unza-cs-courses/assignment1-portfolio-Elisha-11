@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio website for [Your Name]">
-    <title>Portfolio - [Your Name]</title>
+    <meta name="description" content="Professional portfolio website for Elisha Lungu - Full-Stack Developer & Blockchain Enthusiast">
+    <title>Elisha Lungu | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -25,15 +28,8 @@
     <!-- Navigation -->
     <header class="header">
         <nav class="nav">
-            <!-- TODO: Create navigation with links to each section
-                 Requirements:
-                 - Logo/site title
-                 - Navigation links (Home, About, Projects, Contact)
-                 - Mobile-friendly (hamburger menu optional)
-                 - Active state indication
-            -->
             <div class="nav__logo">
-                <a href="#home">[Your Name]</a>
+                <a href="#home">ELISHA LUNGU</a>
             </div>
             <ul class="nav__menu">
                 <li><a href="#home">Home</a></li>
@@ -47,18 +43,11 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <!-- TODO: Create hero section
-                 Requirements:
-                 - Your name (h1)
-                 - Professional tagline
-                 - Call-to-action button
-                 - Consider using Flexbox for layout
-            -->
             <div class="hero__content">
-                <h1>Your Name</h1>
+                <h1>Elisha Lungu</h1>
                 <p class="hero__tagline">
-                    <!-- TODO: Add your professional tagline -->
-                    Web Developer | Designer | Problem Solver
+                    Full-Stack Developer <span class="divider">|</span> Blockchain Enthusiast<br>
+                    Final-Year CS Student at The University of Zambia <span class="divider">|</span> System Designer
                 </p>
                 <a href="#contact" class="btn btn--primary">Get In Touch</a>
             </div>
@@ -66,42 +55,40 @@
 
         <!-- About Section -->
         <section id="about" class="about">
-            <!-- TODO: Create about section
-                 Requirements:
-                 - Section heading (h2)
-                 - Profile image with alt text
-                 - Professional bio (150+ words)
-                 - Skills list
-                 - Use CSS Grid or Flexbox for layout
-            -->
             <div class="container">
                 <h2>About Me</h2>
                 <div class="about__content">
                     <div class="about__image">
-                        <!-- TODO: Add your profile image -->
-                        <img src="images/profile-placeholder.jpg" alt="Profile photo of [Your Name]">
+                        <img src="elisha.jpeg" alt="Profile photo of Elisha Lungu, Computer Science student at the University of Zambia">
                     </div>
                     <div class="about__text">
                         <p>
-                            <!-- TODO: Write your professional bio (150+ words)
-                                 Include:
-                                 - Your background
-                                 - Your interests in web development
-                                 - Your goals
-                                 - What makes you unique
-                            -->
-                            [Your professional bio goes here. Write at least 150 words about yourself,
-                            your background, your passion for web development, and your goals.
-                            This is your opportunity to introduce yourself to potential employers or clients.]
+                            I am a final-year Computer Science student at the University of Zambia (UNZA),
+                            passionate about building innovative web applications and exploring blockchain
+                            technology. My journey in web development began with simple HTML pages and has 
+                            evolved into creating full-stack applications using Python, Django, Flask,
+                            React, and modern JavaScript frameworks.
+                            I specialize in creating intuitive user experiences, writing clean and scalable
+                            code, and implementing responsive design principles. Currently, I am working 
+                            on a Blockchain-Based Academic Certificate Verification System to enhance 
+                            security and reduce fraud in academic institutions.
+                            Beyond coding, I actively contribute to open-source projects, share knowledge
+                            with the developer community, and continuously learn emerging technologies like
+                            AI, Web3, and cybersecurity. I am seeking opportunities to apply my skills to
+                            solve real-world problems and make a meaningful impact through technology.
                         </p>
                         <h3>Skills</h3>
                         <ul class="skills-list">
-                            <!-- TODO: Add your skills -->
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JavaScript</li>
-                            <li>Responsive Design</li>
-                            <!-- Add more skills -->
+                            <li>HTML5 &amp; Semantic Markup</li>
+                            <li>CSS3 &amp; Responsive Design</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Python &amp; Django</li>
+                            <li>Flask &amp; REST APIs</li>
+                            <li>React &amp; Component Architecture</li>
+                            <li>Git &amp; GitHub Workflow</li>
+                            <li>Blockchain (Solidity, Web3.js)</li>
+                            <li>SQL &amp; Database Design</li>
+                            <li>Agile &amp; Software Engineering Principles</li>
                         </ul>
                     </div>
                 </div>
@@ -110,90 +97,77 @@
 
         <!-- Projects Section -->
         <section id="projects" class="projects">
-            <!-- TODO: Create projects section
-                 Requirements:
-                 - Section heading (h2)
-                 - Minimum 3 project cards
-                 - Each card: image, title, description, link(s)
-                 - Use CSS Grid for card layout
-            -->
             <div class="container">
                 <h2>My Projects</h2>
                 <div class="projects__grid">
                     <!-- Project Card 1 -->
                     <article class="project-card">
-                        <!-- TODO: Replace with your project -->
-                        <img src="images/project1-placeholder.jpg" alt="Screenshot of Project 1">
+                        <img src="https://placehold.co/600x400/6366f1/ffffff?text=Bank+Management+System&font=inter" 
+                             alt="Bank Management System dashboard showing account overview and transaction history">
                         <div class="project-card__content">
-                            <h3>Project Title 1</h3>
+                            <h3>Bank Management System</h3>
                             <p>
-                                Brief description of your project. What technologies did you use?
-                                What problem does it solve?
+                                Designed and developed a full-stack banking solution to automate account management
+                                and transactions. The system allows customers to perform secure fund transfers and view statements, while admins 
+                                can manage user accounts and approve loans. Implemented robust security measures including 
+                                password hashing and session management to protect sensitive financial data.
                             </p>
                             <div class="project-card__links">
                                 <a href="#" class="btn btn--small">Live Demo</a>
-                                <a href="#" class="btn btn--small btn--outline">GitHub</a>
+                                <a href="#" class="btn btn--small btn--outline" target="_blank" rel="noopener">GitHub</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project Card 2 -->
                     <article class="project-card">
-                        <!-- TODO: Replace with your project -->
-                        <img src="images/project2-placeholder.jpg" alt="Screenshot of Project 2">
+                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Blockchain+Verification&font=inter" 
+                             alt="Blockchain Certificate Verification interface showing credential validation on Ethereum">
                         <div class="project-card__content">
-                            <h3>Project Title 2</h3>
+                            <h3>Blockchain Certificate Verification</h3>
                             <p>
-                                Brief description of your project. What technologies did you use?
-                                What problem does it solve?
+                                A decentralized system for issuing and verifying academic credentials
+                                using Ethereum smart contracts. Built with Solidity, Web3.js, Flask, and React
+                                for instant, tamper-proof verification of academic certificates.
                             </p>
                             <div class="project-card__links">
                                 <a href="#" class="btn btn--small">Live Demo</a>
-                                <a href="#" class="btn btn--small btn--outline">GitHub</a>
+                                <a href="https://github.com/Elisha-11/blockchain-cert-system" class="btn btn--small btn--outline" target="_blank" rel="noopener">GitHub</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project Card 3 -->
                     <article class="project-card">
-                        <!-- TODO: Replace with your project -->
-                        <img src="images/project3-placeholder.jpg" alt="Screenshot of Project 3">
+                        <img src="https://placehold.co/600x400/f97316/ffffff?text=Library+Management+System&font=inter" 
+                             alt="Library Management System interface showing book catalog and member management">
                         <div class="project-card__content">
-                            <h3>Project Title 3</h3>
+                            <h3>Library Management System</h3>
                             <p>
-                                Brief description of your project. What technologies did you use?
-                                What problem does it solve?
+                                A comprehensive solution for managing university library operations. 
+                                The system enables librarians to track books, manage member accounts, 
+                                and monitor borrowing history through an intuitive interface. 
+                                Built with Python and Django, it features secure authentication, 
+                                real-time availability checks, and responsive design for access 
+                                on any device.
                             </p>
                             <div class="project-card__links">
                                 <a href="#" class="btn btn--small">Live Demo</a>
-                                <a href="#" class="btn btn--small btn--outline">GitHub</a>
+                                <a href="#" class="btn btn--small btn--outline" target="_blank" rel="noopener">GitHub</a>
                             </div>
                         </div>
                     </article>
-
-                    <!-- TODO: Add more project cards if desired -->
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact">
-            <!-- TODO: Create contact section
-                 Requirements:
-                 - Section heading (h2)
-                 - Contact form with:
-                   - Name field (required)
-                   - Email field (required, type="email")
-                   - Message textarea (required)
-                   - Submit button
-                 - All inputs must have associated labels
-                 - Use HTML5 validation attributes
-            -->
             <div class="container">
                 <h2>Contact Me</h2>
                 <form class="contact__form" action="#" method="POST">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Name <span class="required">*</span></label>
                         <input
                             type="text"
                             id="name"
@@ -201,16 +175,18 @@
                             required
                             placeholder="Your Name"
                             minlength="2"
+                            autocomplete="name"
                         >
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Email <span class="required">*</span></label>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             required
                             placeholder="your.email@example.com"
+                            autocomplete="email"
                         >
                     </div>
                     <div class="form-group">
@@ -223,7 +199,7 @@
                         >
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message">Message <span class="required">*</span></label>
                         <textarea
                             id="message"
                             name="message"
@@ -241,19 +217,12 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <!-- TODO: Create footer
-             Requirements:
-             - Copyright notice
-             - Social media links (optional)
-             - Back to top link (optional)
-        -->
         <div class="container">
-            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
-            <nav class="footer__social">
-                <!-- TODO: Add your social media links -->
-                <a href="#" aria-label="GitHub">GitHub</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
+            <p>&copy; 2026 Elisha Lungu. All rights reserved.</p>
+            <nav class="footer__social" aria-label="Social media links">
+                <a href="https://github.com/Elisha-11" aria-label="View my GitHub profile" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/elisha-lungu" aria-label="View my LinkedIn profile" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:lunguelisha3@gmail.com" aria-label="Send me an email">lunguelisha3@gmail.com</a>
             </nav>
         </div>
     </footer>

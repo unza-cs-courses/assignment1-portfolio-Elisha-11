@@ -1,3 +1,69 @@
+# Assignment 1: Responsive Portfolio Website
+
+## Personal Information
+**Name:** Elisha Lungu  
+**Student ID:** 2021490777  
+**Design Theme:** Modern Indigo Professional – A clean, minimalist portfolio with an indigo (#6366f1) and emerald (#10b981) color palette. Features smooth hover animations, mobile-first responsive layout, semantic HTML structure, and automatic dark mode support via CSS media queries. Designed for readability, accessibility, and professional presentation.
+
+
+
+## CSS Techniques Used
+- CSS Custom Properties
+- Flexbox
+- CSS Grid
+- Media Queries
+- Other: CSS Transitions, `prefers-color-scheme: dark`, `prefers-reduced-motion`, Print Stylesheet, BEM Naming Convention
+
+
+
+## Challenges & Solutions
+
+**Challenge 1: Responsive Project Grid Layout**  
+*Problem:* Getting the projects section to display 1 column on mobile, 2 on tablet, and 3 on desktop without breaking the card content.  
+*Solution:* Used CSS Grid with `grid-template-columns: 1fr` as the mobile base, then added media queries at 768px (`repeat(2, 1fr)`) and 1024px (`repeat(3, 1fr)`). Combined with `gap` for spacing and `min-width` on cards to prevent overflow.
+
+**Challenge 2: About Section Layout Across Breakpoints**  
+*Problem:* Profile image and bio text needed to stack on mobile but align side-by-side on larger screens without awkward spacing.  
+*Solution:* Used Flexbox with `flex-direction: column` by default (mobile), then switched to `row` at 768px breakpoint. Added `align-items: center` on mobile and `align-items: flex-start` on desktop for proper alignment.
+
+**Challenge 3: Dark Mode Without JavaScript**  
+*Problem:* Implementing a dark theme that respects user preference without adding JS complexity.  
+*Solution:* Used `@media (prefers-color-scheme: dark)` to override CSS custom properties for colors and backgrounds. All components reference variables, so the theme switches automatically based on OS settings.
+
+**Challenge 4: Form Accessibility & Validation**  
+*Problem:* Ensuring the contact form meets accessibility requirements while providing clear validation feedback.  
+*Solution:* Used semantic `<label>` elements with `for` attributes, HTML5 validation (`required`, `type="email"`, `minlength`), and CSS `:focus` states with visible outlines. Added `autocomplete` attributes for better UX.
+
+
+
+## Credits
+
+**Fonts**  
+- [Inter Font Family](https://fonts.google.com/specimen/Inter) via Google Fonts (SIL Open Font License)
+
+**Placeholder Images (Development Only)**  
+- [placehold.co](https://placehold.co) – Dynamic placeholder image service  
+  - Bank System: `https://placehold.co/600x400/6366f1/ffffff?text=Bank+Management+System&font=inter`  
+  - Blockchain: `https://placehold.co/600x400/10b981/ffffff?text=Blockchain+Verification&font=inter`  
+  - Library: `https://placehold.co/600x400/f97316/ffffff?text=Library+Management+System&font=inter`
+
+**Profile Photo**  
+- Personal photo: elisha.jpeg
+
+**Color Palette Reference**  
+- Tailwind CSS color documentation 
+
+**Tools Used**  
+- Visual Studio Code (code editor)  
+- Chrome DevTools (responsive testing & screenshots)  
+- W3C HTML/CSS Validators (code validation)  
+- Git & GitHub (version control)
+
+
+
+
+
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/8NpkA7e4)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=22898067&assignment_repo_type=AssignmentRepo)
 # Assignment 1: Responsive Portfolio Website
